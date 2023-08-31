@@ -31,7 +31,10 @@ public class MappingConfiguration {
         return new AdminMapper();
     }
 
-
+    @Bean
+    public EventMapper eventMapper() {
+        return new EventMapper();
+    }
 
     @Bean
     public PublicationMapper publicationMapper() {
