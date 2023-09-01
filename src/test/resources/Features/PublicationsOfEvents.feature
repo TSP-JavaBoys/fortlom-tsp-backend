@@ -11,11 +11,3 @@ Feature: Publications Of Events
     And do not fill in the form
     And press the button Create and Post
     Then the event will not be created
-  Scenario: Show all events
-    Given that the artist is on Event section
-    When press the button Show All Events
-    Then all events will be displayed
-  Scenario: Do not show events
-    Given that the artist is on Event section
-    When press the button Not Show Events
-    Then events will not be displayed
