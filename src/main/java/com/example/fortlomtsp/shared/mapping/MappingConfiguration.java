@@ -78,4 +78,10 @@ public class MappingConfiguration {
         return new ComplaintMapper();
     }
 
+
+    @Bean
+    public FanaticForumMapper fanaticForumMapper() {
+        return new FanaticForumMapper();
+    }
+
 }
