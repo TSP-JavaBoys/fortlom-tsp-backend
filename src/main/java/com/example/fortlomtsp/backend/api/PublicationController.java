@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/v1/contentservice")
 public class PublicationController {
     @Autowired

@@ -16,7 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/v1/answerservice")
 public class PublicationCommentController {
 

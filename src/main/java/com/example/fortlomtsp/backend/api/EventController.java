@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/v1/contentservice")
 public class EventController {
     @Autowired
