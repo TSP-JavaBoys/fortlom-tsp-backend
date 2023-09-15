@@ -1,5 +1,5 @@
 FROM openjdk:17-jdk-alpine AS build
-
+RUN apk --no-cache add maven
 COPY . .
 RUN mvn clean package -Pprod -DskipTests
 
