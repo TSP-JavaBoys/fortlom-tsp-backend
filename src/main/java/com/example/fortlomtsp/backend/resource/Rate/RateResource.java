@@ -17,9 +17,9 @@ public class RateResource {
     private Float review;
 
 
-    private ArtistResource artistid;
+    private ArtistResource artist;
 
 
-    private FanaticResource fanaticid;
+    private FanaticResource fanatic;
 }
 

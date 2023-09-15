@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = {"*"})
+@CrossOrigin()
 @RequestMapping("/api/v1/administrationservice")
 public class AdminController {
 

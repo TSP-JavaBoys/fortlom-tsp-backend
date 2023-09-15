@@ -17,7 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = {"*"})
+@CrossOrigin()
 @RequestMapping("/api/v1/fanaticforumservice")
 public class FanaticForumController {
 

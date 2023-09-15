@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.text.ParseException;
 
 @RestController
-@CrossOrigin(origins = {"*"})
+@CrossOrigin()
 @RequestMapping("/auth")
 public class AuthController {
     @Autowired

@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;;
 @RestController
-@CrossOrigin(origins = {"*"})
+@CrossOrigin()
 @RequestMapping("/api/v1/multimediaservice")
 public class ImageUserController {
 
