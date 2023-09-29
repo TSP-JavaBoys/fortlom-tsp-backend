@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin()
+@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/v1/artistforumservice")
 public class ArtistForumController {
     private final ArtistForumService artistForumService;
