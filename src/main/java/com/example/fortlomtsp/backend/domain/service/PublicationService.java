@@ -1,5 +1,6 @@
 package com.example.fortlomtsp.backend.domain.service;
 
+import com.example.fortlomtsp.backend.domain.model.entity.Event;
 import com.example.fortlomtsp.backend.domain.model.entity.Publication;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,6 +15,7 @@ public interface PublicationService {
     Publication create(Long artistId, Publication publication,String type);
     Publication update(Long publicationId, Publication request);
     List<Publication> getPublicationByArtistId(Long artistId);
+
     ResponseEntity<?> delete(Long publicationId);
     boolean existspublication(Long publicationId);
 }

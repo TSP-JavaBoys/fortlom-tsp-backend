@@ -72,6 +72,8 @@ public class EventServiceImpl implements EventService {
         return eventRepository.findByArtistId(artistId);
     }
 
+
+
     @Override
     public ResponseEntity<?> deleteEvent(Long eventId) {
         return eventRepository.findById(eventId).map(event -> {

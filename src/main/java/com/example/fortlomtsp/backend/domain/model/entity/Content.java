@@ -6,6 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -32,4 +33,10 @@ public class Content {
     @ManyToOne(targetEntity = Artist.class)
     @JoinColumn(name = "artistid")
     private Artist artist;
+
+    @OneToMany(targetEntity = Opinion.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "opinionid",referencedColumnName = "id")
+    private List<Opinion> opinions;
+
+
 }

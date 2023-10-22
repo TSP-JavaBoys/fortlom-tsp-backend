@@ -77,8 +77,7 @@ public class PublicationServiceImpl implements PublicationService {
     @Override
     public Publication update(Long publicationId, Publication request) {
         return publicationRepository.findById(publicationId).map(post->{
-
-
+            post.setDescription(request.getDescription());
             publicationRepository.save(post);
             return post;
 
