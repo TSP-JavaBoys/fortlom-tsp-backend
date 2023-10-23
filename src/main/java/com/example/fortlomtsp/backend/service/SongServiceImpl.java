@@ -45,7 +45,7 @@ public class SongServiceImpl implements SongService {
     }
 
     @Override
-    public Song create(Long albumId, Song request, String type) {
+    public Song create(Long albumId, Song request) {
         return albumRepository.findById(albumId)
                 .map(album ->{
                     request.setAlbum(album);

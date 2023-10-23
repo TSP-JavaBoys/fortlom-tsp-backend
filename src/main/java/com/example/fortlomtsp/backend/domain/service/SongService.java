@@ -13,7 +13,7 @@ public interface SongService {
     Page<Song> getAll(Pageable pageable);
     Song getById(Long songId);
     void save(Song song);
-    Song create(Long albumId, Song request, String type);
+    Song create(Long albumId, Song request);
     Song update(Long songId, Song request);
     ResponseEntity<?> delete(Long songId);
     List<Song> getSongByAlbumId(Long albumId);

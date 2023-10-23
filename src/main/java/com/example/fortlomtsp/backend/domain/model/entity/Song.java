@@ -28,9 +28,9 @@ public class Song {
     @NotBlank
     private String musicUrl;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private Category category;
+    //@NotNull
+    //@Enumerated(EnumType.STRING)
+    //private Category category;
 
     @ManyToOne(targetEntity = Album.class)
     @JoinColumn(name = "albumid")

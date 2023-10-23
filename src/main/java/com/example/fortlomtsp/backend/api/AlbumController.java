@@ -26,20 +26,20 @@ public class AlbumController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @GetMapping("/albums")
+    @GetMapping
     public Page<AlbumResource> getAllAlbums(Pageable pageable){
         return albumMapper.modelListToPage(albumService.getAll(), pageable);
     }
 
-    @GetMapping("/albums/{albumId}")
+    @GetMapping("/album/{albumId}")
     public AlbumResource getAlbumById(@PathVariable("albumId") Long albumId){
         return albumMapper.toResource(albumService.getById(albumId));
     }
 
-    @PostMapping("/artist/{artistId}/type/{type}/albums")
-    public ResponseEntity<AlbumResource> createAlbum(@PathVariable Long artistId, @PathVariable String type, @RequestBody CreateAlbumResource request){
+    @PostMapping("/artist/{artistId}/newAlbum")
+    public ResponseEntity<AlbumResource> createAlbum(@PathVariable Long artistId, @RequestBody CreateAlbumResource request){
         Album album = modelMapper.map(request, Album.class);
-        return ResponseEntity.ok(modelMapper.map(albumService.create(artistId, album, type), AlbumResource.class));
+        return ResponseEntity.ok(modelMapper.map(albumService.create(artistId, album), AlbumResource.class));
     }
 
     @DeleteMapping("/albums/{albumId}")
@@ -47,7 +47,7 @@ public class AlbumController {
         return albumService.delete(albumId);
     }
 
-    @GetMapping("/artists/{artistId}/albums")
+    @GetMapping("/artist/{artistId}/albums")
     public ResponseEntity<Page<AlbumResource>> getAllAlbumByArtistId(@PathVariable Long artistId, Pageable pageable){
         return ResponseEntity.ok(albumMapper.modelListToPage(albumService.getAlbumByArtistId(artistId), pageable));
     }

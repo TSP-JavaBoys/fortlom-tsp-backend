@@ -11,7 +11,7 @@ public interface AlbumService {
     List<Album> getAll();
     Page<Album> getAll(Pageable pageable);
     Album getById(Long albumId);
-    Album create(Long artistId, Album request, String type);
+    Album create(Long artistId, Album request);
     Album update(Long albumId, Album request);
     List<Album> getAlbumByArtistId(Long artistId);
     ResponseEntity<?> delete(Long albumId);

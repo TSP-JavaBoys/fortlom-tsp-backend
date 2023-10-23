@@ -40,7 +40,7 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     @Override
-    public Album create(Long artistId, Album request, String type) {
+    public Album create(Long artistId, Album request) {
         return artistRepository.findById(artistId)
                 .map(artist -> {
                     request.setArtist(artist);

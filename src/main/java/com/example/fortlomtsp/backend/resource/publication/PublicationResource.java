@@ -17,6 +17,5 @@ public class PublicationResource {
 
     private Date registerdate;
 
-
     private ArtistResource artist;
 }
