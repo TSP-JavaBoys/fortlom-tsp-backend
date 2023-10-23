@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface SongRepository extends JpaRepository<Song, Long> {
-    List<Song> findSongsByAlbumId(Long AlbumId);
+    List<Song> findByAlbumId(Long albumId);
     Song findSongByName(String name);
     boolean existsById(Long userId);
     Boolean existsByName(String name);

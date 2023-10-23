@@ -6,14 +6,16 @@ import com.example.fortlomtsp.backend.resource.Song.SongResource;
 import com.example.fortlomtsp.shared.mapping.EnhancedModelMapper;
 import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Auditable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 
+import java.io.Serializable;
 import java.util.List;
 
-@Mapper
-public class SongMapper {
+
+public class SongMapper implements Serializable {
     @Autowired
     EnhancedModelMapper mapper;
 

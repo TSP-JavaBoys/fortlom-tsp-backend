@@ -31,29 +31,17 @@ public class PublicationServiceImpl implements PublicationService {
 
     @Override
     public List<Publication> getAll() {
-
-
         return publicationRepository.findAll();
-
-
-
     }
 
     @Override
     public Page<Publication> getAll(Pageable pageable) {
-
-
         return publicationRepository.findAll(pageable);
-
-
-
     }
 
     @Override
     public Publication getById(Long publicationId) {
-
         return publicationRepository.findById(publicationId).orElseThrow(() -> new ResourceNotFoundException(ENTITY, publicationId));
-
     }
 
     @Override

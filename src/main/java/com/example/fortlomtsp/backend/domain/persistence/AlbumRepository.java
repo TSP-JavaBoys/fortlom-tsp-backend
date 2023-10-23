@@ -8,9 +8,7 @@ import java.util.List;
 
 @Repository
 public interface AlbumRepository extends JpaRepository<Album, Long> {
-    List<Album> findAlbumsByUserAccountId(Long userId);
-    Album findAlbumByUserAccountId(Long userId);
+    List<Album> findByArtistId(Long artistId);
+    boolean existsById(Long albumId);
     Album findAlbumByName(String name);
-    boolean existsById(Long userId);
-    Boolean existsByName(String username);
 }
