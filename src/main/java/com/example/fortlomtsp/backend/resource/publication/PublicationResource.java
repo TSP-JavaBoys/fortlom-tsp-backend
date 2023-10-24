@@ -12,7 +12,6 @@ public class PublicationResource {
 
     private String description;
 
-
     private boolean image;
 
     private Date registerdate;

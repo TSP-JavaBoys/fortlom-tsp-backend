@@ -31,7 +31,7 @@ public class AlbumController {
         return albumMapper.modelListToPage(albumService.getAll(), pageable);
     }
 
-    @GetMapping("/album/{albumId}")
+    @GetMapping(value = "/{albumId}", produces = "application/json")
     public AlbumResource getAlbumById(@PathVariable("albumId") Long albumId){
         return albumMapper.toResource(albumService.getById(albumId));
     }
