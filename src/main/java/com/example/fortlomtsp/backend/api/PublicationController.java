@@ -3,8 +3,11 @@ package com.example.fortlomtsp.backend.api;
 import com.example.fortlomtsp.backend.domain.model.entity.Publication;
 import com.example.fortlomtsp.backend.domain.service.PublicationService;
 import com.example.fortlomtsp.backend.mapping.PublicationMapper;
+import com.example.fortlomtsp.backend.resource.artist.ArtistResource;
+import com.example.fortlomtsp.backend.resource.artist.UpdateArtistResource;
 import com.example.fortlomtsp.backend.resource.publication.CreatePublicationResource;
 import com.example.fortlomtsp.backend.resource.publication.PublicationResource;
+import com.example.fortlomtsp.backend.resource.publication.UpdatePublicationResource;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -15,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin()
+@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/v1/contentservice")
 public class PublicationController {
     @Autowired
@@ -54,4 +57,36 @@ public class PublicationController {
     public boolean existspublication(@PathVariable("publicationId") Long publicationId){
         return publicationService.existspublication(publicationId);
     }
+
+    @PutMapping("/publications/{publicationId}")
+    public PublicationResource updateUser(@PathVariable Long publicationId, @RequestBody UpdatePublicationResource request) {
+        return mapper.toResource(publicationService.update(publicationId, mapper.toModel(request)));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

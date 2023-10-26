@@ -1,5 +1,6 @@
 package com.example.fortlomtsp.backend.domain.service;
 import com.example.fortlomtsp.backend.domain.model.entity.Event;
+import com.example.fortlomtsp.backend.domain.model.entity.Fanatic;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
