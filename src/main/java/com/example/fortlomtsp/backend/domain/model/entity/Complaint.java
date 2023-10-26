@@ -46,6 +46,4 @@ public class Complaint {
     @ManyToOne(targetEntity = UserAccount.class)
     @JoinColumn(name = "userReportedid")
     private UserAccount userReported;
-
-
 }

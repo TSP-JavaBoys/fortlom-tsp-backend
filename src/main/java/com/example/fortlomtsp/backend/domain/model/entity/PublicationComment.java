@@ -17,8 +17,6 @@ import java.util.List;
 @PrimaryKeyJoinColumn(referencedColumnName = "id")
 public class PublicationComment extends Comment{
 
-
-
     @ManyToOne(targetEntity = Publication.class)
     @JoinColumn(name = "publicationid")
     private Publication publication;

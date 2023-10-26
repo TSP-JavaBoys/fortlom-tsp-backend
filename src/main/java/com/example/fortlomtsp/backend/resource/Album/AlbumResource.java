@@ -1,20 +1,15 @@
-package com.example.fortlomtsp.backend.resource.publication;
+package com.example.fortlomtsp.backend.resource.Album;
+
+import com.example.fortlomtsp.backend.domain.model.enumeration.Category;
 import com.example.fortlomtsp.backend.resource.artist.ArtistResource;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
-@Setter
 @Getter
-public class PublicationResource {
+@Setter
+public class AlbumResource {
     private Long id;
-
+    private String name;
     private String description;
-
-    private boolean image;
-
-    private Date registerdate;
-
     private ArtistResource artist;
 }

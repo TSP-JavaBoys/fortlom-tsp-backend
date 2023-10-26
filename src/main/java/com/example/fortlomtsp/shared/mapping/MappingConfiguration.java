@@ -30,7 +30,11 @@ public class MappingConfiguration {
     public AdminMapper adminMapper() {
         return new AdminMapper();
     }
+    @Bean
+    public AlbumMapper albumMapper(){ return new AlbumMapper();}
 
+    @Bean
+    public SongMapper songMapper(){return new SongMapper();}
     @Bean
     public EventMapper eventMapper() {
         return new EventMapper();
