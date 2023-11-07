@@ -7,5 +7,7 @@ import lombok.Setter;
 @Setter
 public class UpdateFanaticForumResource {
     private String forumrules;
+    private String forumname;
+    private String forumdescription;
 
 }
