@@ -1,10 +1,13 @@
 package com.example.fortlomtsp.backend.api;
 
 import com.example.fortlomtsp.backend.domain.model.entity.Forum;
+
 import com.example.fortlomtsp.backend.domain.service.ArtistForumService;
 import com.example.fortlomtsp.backend.mapping.FanaticForumMapper;
 import com.example.fortlomtsp.backend.resource.FanaticForum.CreateFanaticForumResource;
 import com.example.fortlomtsp.backend.resource.FanaticForum.FanaticForumResource;
+import com.example.fortlomtsp.backend.resource.FanaticForum.UpdateFanaticForumResource;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,4 +38,16 @@ public class ArtistForumController {
         Forum forum = mapping.map(request, Forum.class);
         return ResponseEntity.ok(mapping.map(artistForumService.create(artistId, forum), FanaticForumResource.class));
     }
+
+    @DeleteMapping("/forums/{forumId}")
+    public ResponseEntity<?> deleteForum(@PathVariable Long forumId) {
+        return artistForumService.delete(forumId);
+    }
+    @PutMapping("/forums/{forumId}")
+    public FanaticForumResource updateUser(@PathVariable Long forumId, @RequestBody UpdateFanaticForumResource request) {
+        return mapper.toResource(artistForumService.update(forumId, mapper.toModel(request)));
+    }
+
+
+
 }
