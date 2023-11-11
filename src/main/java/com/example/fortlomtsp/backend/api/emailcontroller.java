@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 @RestController
 @RequestMapping("/email-password")
-@CrossOrigin()
+@CrossOrigin(origins = {"*"})
 public class emailcontroller {
 
     @Autowired
