@@ -16,4 +16,5 @@ public interface EventService {
     List<Event> getEventsByArtistId(Long artistId);
     ResponseEntity<?> deleteEvent(Long eventId);
     boolean existsById(Long eventId);
+    Event updateEventContent(Long eventId, Event resource);
 }

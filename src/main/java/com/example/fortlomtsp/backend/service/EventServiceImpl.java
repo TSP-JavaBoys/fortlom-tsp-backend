@@ -30,7 +30,16 @@ public class EventServiceImpl implements EventService {
 
 
     }
-
+    @Override
+    public Event updateEventContent(Long eventId, Event resource) {
+        return eventRepository.findById(eventId).map(newEvent->{
+            newEvent.setDescription(resource.getDescription());
+            newEvent.setName(resource.getName());
+            newEvent.setTicketLink(resource.getTicketLink());
+            eventRepository.save(newEvent);
+            return newEvent;
+        }).orElseThrow(()->new ResourceNotFoundException(ENTITY,eventId));
+    }
     @Override
     public Page<Event> getAllEvents(Pageable pageable) {
 
