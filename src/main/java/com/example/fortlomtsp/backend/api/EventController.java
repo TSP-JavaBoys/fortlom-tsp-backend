@@ -7,6 +7,7 @@ import com.example.fortlomtsp.backend.domain.service.EventService;
 import com.example.fortlomtsp.backend.mapping.EventMapper;
 import com.example.fortlomtsp.backend.resource.event.CreateEventResource;
 import com.example.fortlomtsp.backend.resource.event.EventResource;
+import com.example.fortlomtsp.backend.resource.event.UpdateEventResource;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -72,4 +73,15 @@ public class EventController {
         return eventService.existsById(eventId);
     }
 
+    @PutMapping("/eventupdate/{eventId}")
+    public ResponseEntity<?> updateEventContent(@PathVariable Long eventId, @RequestBody UpdateEventResource request) {
+        try {
+            EventResource updatedEvent = mapper.toResource(eventService.updateEventContent(eventId, mapper.toModel(request)));
+            return ResponseEntity.ok(updatedEvent);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            String errorMessage = "Error interno al actualizar el evento";
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage);
+        }
+    }
 }
