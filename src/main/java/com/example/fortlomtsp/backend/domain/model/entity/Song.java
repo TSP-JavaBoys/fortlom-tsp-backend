@@ -28,6 +28,10 @@ public class Song {
     @NotBlank
     private String musicUrl;
 
+    @NotNull
+    @NotBlank
+    private String category;
+
     //@NotNull
     //@Enumerated(EnumType.STRING)
     //private Category category;

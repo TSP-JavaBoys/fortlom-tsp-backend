@@ -10,5 +10,6 @@ public class SongResource {
     Long id;
     String name;
     String musicUrl;
+    String category;
     private AlbumResource albumResource;
 }
